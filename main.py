@@ -32,7 +32,7 @@ if uploaded_file is not None:
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": "Provide a detailed description of the image provided."},
+                            {"type": "text", "text": "Provide a concise and accurate description of the image provided. You have to give response in descriptive format rather than list."},
                             {
                                 "type": "image_url",
                                 "image_url": {"url": image_url},
