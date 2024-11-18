@@ -8,7 +8,9 @@ load_dotenv()
 OPENAI_API_KEY = os.environ.get("OPENAI_KEY")
 IMGBB_API_KEY = os.environ.get("IMGBB_API_KEY")
 
-uploaded_file = st.file_uploader("Choose a file")
+st.title("Computer Vision for Diagnostic of Medical Images:hospital:")
+st.sidebar.header(":red[Please Upload an Image:]")
+uploaded_file = st.sidebar. file_uploader("")
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
 
@@ -40,8 +42,10 @@ if uploaded_file is not None:
                 ],
             )
 
-            st.title("Image Description:")
-            st.write(completion.choices[0].message.content)
+            st.header(":green[Image Description:]")
+            container = st.container(border=True)
+            container.write(completion.choices[0].message.content)
+            # st.write(completion.choices[0].message.content)
         except Exception as e:
             st.error(f"An error occurred: {e}")
     else:
