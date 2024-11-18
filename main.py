@@ -5,7 +5,7 @@ from openai import OpenAI
 import requests
 
 load_dotenv()
-OPENAI_API_KEY = os.environ.get("OPENAI_KEY")
+OPENAI_API_KEY = st.input("Enter OPENAI API KEY")
 IMGBB_API_KEY = os.environ.get("IMGBB_API_KEY")
 
 uploaded_file = st.file_uploader("Choose a file")
